@@ -1,0 +1,11 @@
+midiokbd: Use MIDI keyboard as a normal keyboard
+--------------------------------------------------------------------------------
+I use this for osu!mania games.
+
+1. Run 'aconnect --list' to find out the port name of your MIDI keyboard.
+2. Run 'sudo midiokbd <PORT-NAME>' to send normal keyboard events via
+the MIDI keyboard.
+
+Reference:
+- https://docs.kernel.org/input/uinput.html
+- https://git.alsa-project.org/?p=alsa-utils.git;a=blob_plain;f=seq/aseqdump/aseqdump.c

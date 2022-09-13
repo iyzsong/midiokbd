@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2022 iyzsong
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+rule cc
+  command = gcc -c `pkg-config --cflags alsa` -o $out $in
+rule ld
+  command = gcc `pkg-config --libs alsa` -o $out $in
+
+build midiokbd: ld main.o
+build main.o: cc main.c
